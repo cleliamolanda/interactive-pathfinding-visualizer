@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pathfinder Visualizer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Pathfinder Visualizer</h1>
+        <p>An A* Search Implementation</p>
+    </header>
+
+    <main class="container">
+    <section class="controls">
+        <div class="control-group">
+        <label for="grid-size">Grid Size</label>
+        <select id="grid-size">
+            <option value="10" selected="selected">10x10</option>
+            <option value="15">15x15</option>
+            <option value="20">20x20</option>
+            <option value="30">30x30</option>
+            <option value="40">40x40</option>
+            <option value="50">50x50</option>
+        </select>
+        </div>
+
+        <div class="control-group">
+        <label for="obstacle-frequency">Obstacle Frequency</label>
+        <select id="obstacle-frequency">
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+        </select>
+        </div>
+
+        <hr />
+
+        <div class="checkbox-group">
+        <label><input type="checkbox" checked /> Go to closest node if target unreachable</label>
+        <label><input type="checkbox" checked /> Show search info</label>
+        <label><input type="checkbox" checked /> Add random weights</label>
+        <label><input type="checkbox" checked /> Display weight values</label>
+        </div>
+
+        <button id="generate-grid">Generate new grid</button>
+    </section>
+
+    <section class="grid">
+        <!-- This will be generated dynamically via JS later -->
+        <div class="grid-container" id="grid-container">
+        <!-- 10x10 grid cells go here -->
+        </div>
+    </section>
+    </main>
+</body>
+</html>
