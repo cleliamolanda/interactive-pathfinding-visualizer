@@ -1,3 +1,4 @@
+// Implements the astar search algorithm in javascript using a Binary Heap.
 (function(definition) {
   /* global module, define */
   if (typeof module === 'object' && typeof module.exports === 'object') {
@@ -36,8 +37,7 @@ var astar = {
   * @param {Object} [options]
   * @param {bool} [options.closest] Specifies whether to return the
              path to the closest node if the target is unreachable.
-  * @param {Function} [options.heuristic] Heuristic function (see
-  *          astar.heuristics).
+  * @param {Function} [options.heuristic] Heuristic function
   */
   search: function(graph, start, end, options) {
     graph.cleanDirty();
@@ -117,7 +117,6 @@ var astar = {
     // No result was found - empty array signifies failure to find path.
     return [];
   },
-  // See list of heuristics: http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html
   heuristics: {
     manhattan: function(pos0, pos1) {
       var d1 = Math.abs(pos1.x - pos0.x);
