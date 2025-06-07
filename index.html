@@ -13,47 +13,52 @@
     </header>
 
     <main class="container">
-    <section class="controls">
-        <div class="control-group">
-        <label for="grid-size">Grid Size</label>
-        <select id="grid-size">
-            <option value="10" selected="selected">10x10</option>
-            <option value="15">15x15</option>
-            <option value="20">20x20</option>
-            <option value="30">30x30</option>
-            <option value="40">40x40</option>
-            <option value="50">50x50</option>
-        </select>
+        <section class="controls">
+            <div class="control-group">
+            <label for="grid-size">Grid Size</label>
+            <select id="grid-size" name="grid-size">
+                <option value="10" selected="selected">10x10</option>
+                <option value="15">15x15</option>
+                <option value="20">20x20</option>
+                <option value="30">30x30</option>
+                <option value="40">40x40</option>
+                <option value="50">50x50</option>
+            </select>
+            </div>
+
+            <div class="control-group">
+                <label for="obstacle-frequency">Obstacle Frequency</label>
+                <select id="obstacle-frequency">
+                    <option value=".1">10%</option>
+                    <option value=".2">20%</option>
+                    <option value=".3">30%</option>
+                    <option value=".4">40%</option>
+                </select>
+            </div>
+
+            <hr />
+
+            <div class="checkbox-group">
+            <label for="check-closest"><input type="checkbox" name="check-closest" id="check-closest"/> Go to closest node if target unreachable</label>
+            <label for="check-debug"><input type="checkbox" name="check-debug" id="check-debug"/> Show search info</label>
+            <label for="generate-weights"><input type="checkbox" name="generate-weights" id="generate-weights"/> Add random weights</label>
+            <label for="display-weights"><input type="checkbox" name="display-weights" id="display-weights"/> Display weight values</label>
+            </div>
+
+            <input type="button" id="generate-grid" value="Generate new grid"></input>
+        </section>
+
+        <div>
+            <span id="message">Click on a grid position to search</span>
+
+            <div id="main">
+	    	    <div id="search_grid">Loading grid...</div>
+	        </div>
         </div>
-
-        <div class="control-group">
-        <label for="obstacle-frequency">Obstacle Frequency</label>
-        <select id="obstacle-frequency">
-            <option>10%</option>
-            <option>20%</option>
-            <option>30%</option>
-            <option>40%</option>
-        </select>
-        </div>
-
-        <hr />
-
-        <div class="checkbox-group">
-        <label><input type="checkbox" checked /> Go to closest node if target unreachable</label>
-        <label><input type="checkbox" checked /> Show search info</label>
-        <label><input type="checkbox" checked /> Add random weights</label>
-        <label><input type="checkbox" checked /> Display weight values</label>
-        </div>
-
-        <button id="generate-grid">Generate new grid</button>
-    </section>
-
-    <section class="grid">
-        <!-- This will be generated dynamically via JS later -->
-        <div class="grid-container" id="grid-container">
-        <!-- 10x10 grid cells go here -->
-        </div>
-    </section>
     </main>
+
+    <script type='text/javascript' src='./demo/jquery-1.7.1.min.js'></script>
+    <script type='text/javascript' src='./demo/astar.js'></script>
+    <script type='text/javascript' src='grid.js'></script>
 </body>
 </html>
