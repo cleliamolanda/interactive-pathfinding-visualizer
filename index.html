@@ -13,17 +13,17 @@
     </header>
 
     <main class="container">
-        <section class="controls">
+        <div id="controls" class="clear">
             <div class="control-group">
-            <label for="grid-size">Grid Size</label>
-            <select id="grid-size" name="grid-size">
-                <option value="10" selected="selected">10x10</option>
-                <option value="15">15x15</option>
-                <option value="20">20x20</option>
-                <option value="30">30x30</option>
-                <option value="40">40x40</option>
-                <option value="50">50x50</option>
-            </select>
+                <label for="grid-size">Grid Size</label>
+                <select id="grid-size" name="grid-size">
+                    <option value="10" selected="selected">10x10</option>
+                    <option value="15">15x15</option>
+                    <option value="20">20x20</option>
+                    <option value="30">30x30</option>
+                    <option value="40">40x40</option>
+                    <option value="50">50x50</option>
+                </select>
             </div>
 
             <div class="control-group">
@@ -39,14 +39,15 @@
             <hr />
 
             <div class="checkbox-group">
-            <label for="check-closest"><input type="checkbox" name="check-closest" id="check-closest"/> Go to closest node if target unreachable</label>
-            <label for="check-debug"><input type="checkbox" name="check-debug" id="check-debug"/> Show search info</label>
-            <label for="generate-weights"><input type="checkbox" name="generate-weights" id="generate-weights"/> Add random weights</label>
-            <label for="display-weights"><input type="checkbox" name="display-weights" id="display-weights"/> Display weight values</label>
+                <label for="check-closest"><input type="checkbox" name="check-closest" id="check-closest"/> Go to closest node if target unreachable</label>
+                <label for="check-debug"><input type="checkbox" name="check-debug" id="check-debug"/> Show search info</label>
+                <label for="search-diagonal"><input type="checkbox" name="search-diagonal" id="search-diagonal"/> Allow diagonal movement</label>
+                <label for="generate-weights"><input type="checkbox" name="generate-weights" id="generate-weights"/> Add random weights</label>
+                <label for="display-weights"><input type="checkbox" name="display-weights" id="display-weights"/> Display weight values</label>
             </div>
 
             <input type="button" id="generate-grid" value="Generate new grid"></input>
-        </section>
+        </div>
 
         <div>
             <span id="message">Click on a grid position to search</span>

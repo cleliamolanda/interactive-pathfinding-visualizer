@@ -7,12 +7,14 @@ $(function() {
         $selectObstacleFrequency = $("#obstacle-frequency"),
         $selectGridSize = $("#grid-size"),
         $checkDebug = $("#check-debug"),
+        $searchDiagonal = $("#search-diagonal"),
         $checkClosest = $("#check-closest");
 
     var opts = {
         wallFrequency: $selectObstacleFrequency.val(),
         gridSize: $selectGridSize.val(),
         debug: $checkDebug.is("checked"),
+        diagonal: $searchDiagonal.is("checked"),
         closest: $checkClosest.is("checked")
     };
 
@@ -36,13 +38,18 @@ $(function() {
         grid.setOption({debug: $(this).is(":checked")});
     });
 
+    $searchDiagonal.change(function() {
+        var val = $(this).is(":checked");
+        grid.setOption({diagonal: val});
+        grid.graph.diagonal = val;
+    });
 
     $checkClosest.change(function() {
         grid.setOption({closest: $(this).is(":checked")});
     });
 
-    $("#generateWeights").click( function () {
-        if ($("#generateWeights").prop("checked")) {
+    $("#generate-weights").click( function () {
+        if ($("#generate-weights").prop("checked")) {
             $('#weightsKey').slideDown();
         } else {
             $('#weightsKey').slideUp();
@@ -94,10 +101,10 @@ GraphSearch.prototype.initialize = function() {
                 $cell.addClass(css.wall);
             }
             else  {
-                var cell_weight = ($("#generateWeights").prop("checked") ? (Math.floor(Math.random() * 3)) * 2 + 1 : 1);
+                var cell_weight = ($("#generate-weights").prop("checked") ? (Math.floor(Math.random() * 3)) * 2 + 1 : 1);
                 nodeRow.push(cell_weight);
                 $cell.addClass('weight' + cell_weight);
-                if ($("#displayWeights").prop("checked")) {
+                if ($("#display-weights").prop("checked")) {
                     $cell.html(cell_weight);
                 }
                 if (!startSet) {
