@@ -138,16 +138,12 @@ input[type="button"]:hover {
     background-color: #f5c2c6;
 }
 
-.grid_item.start {
-	background-color: #FF703F;
+.grid_item.start, .grid_item.finish {
+	background-color: #AD1F28;
 }
 
 .grid_item.active {
-	background-color: #FF703F;
-}
-
-.grid_item.finish {
-
+	background-color: #AD1F28;
 }
 
 #weightsKey {
